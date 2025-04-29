@@ -1,0 +1,9 @@
+[Unit]
+Description=Runs suspend_until '16:30' at 08:30 mon-fri
+Requires=suspend_until@.service
+
+[Timer]
+OnCalendar=Mon..Fri *-*-* 08:30:00
+
+[Install]
+WantedBy=timers.target

@@ -1,19 +1,15 @@
 suspend_until
 =============
 
-Script to make PC sleep and wake up for specific time
+Script to suspend a system until a specific time.<BR><BR>
 
-Source:
-http://askubuntu.com/questions/61708/automatically-sleep-and-wake-up-at-specific-times
+<h3>Usage</h3>
+<pre>suspend_until HH:MM</pre>
+Please note the time is in 24-hour time format, with ":" as a separator<BR><BR>
+<BR>
+<h3>Usage Examples</h3>
+<BR>First, make sure the script is executable: <PRE>sudo chmod +x suspend_until</PRE>then either...<BR><BR>
+<ol><li>Call directly to immediately suspend the system until a specific time: 
+    <pre>suspend_until 07:00 </pre></li> 
+<li>Schedule your PC to suspend and wake up at specific times using the systemd service and timer units. <BR>There are examples provided by this repo in the [systemd](./systemd) folder. </li></ol>
 
-Usage:
-<br/>
-1. To hibernate now on until specific time, use: 
-    <pre> sh suspend_until.sh 07:00 </pre>
-    please note the time is in 24hour time format. Please make user the suspend_until.sh is executable by this command: sudo chmod +x suspend_until.sh
-<br/>
-2. To schedule your PC sleep and wake up in specific time everyday, use crontab, in terminal: 
-    <pre> $ sudo crontab -e </pre>
-		Then add the following script in the bottom of crontab
-		<pre> 00 22 * * * /home/yourname/suspend_until.sh 03:30 </pre>
-		That will make my your computer sleep from 10.00 pm to 03.30 am
