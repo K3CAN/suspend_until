@@ -4,3 +4,5 @@ Description=Puts system into standby via "suspend_until" script.
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/suspend_until %i
+
+#Edit the path above to match the directory the script was copied to.

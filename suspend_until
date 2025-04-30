@@ -7,11 +7,11 @@
 # Minor mods fossfreedom for AskUbuntu
 # Additional modifications by k3can to improve clarity and reliability
 #
-# Takes a 24hour time HH:MM as its argument
+# Takes a 24hour time HH:MM (in local system time) as its argument
 # Example:
 # suspend_until 9:30
 # suspend_until 18:45
-
+#
 # Set suspend type.
 # See "man rtcwake" for possible options.
 SUSPEND_TYPE="mem"
@@ -31,7 +31,7 @@ fi
 # Feedback
 echo "Suspending until $1"
 
-# Suspend system
+# Suspend system via rtcwake
 rtcwake -l -m $SUSPEND_TYPE -t $DESIRED
 
 

@@ -1,6 +1,5 @@
 [Unit]
 Description=Runs suspend_until '06:00' at 11pm daily
-Requires=suspend_until@.service
 
 [Timer]
 OnCalendar=*-*-* 23:00:00
